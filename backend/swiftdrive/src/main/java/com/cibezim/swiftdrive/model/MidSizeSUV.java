@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 
 @Entity
 @DiscriminatorValue("MIDSIZE_SUV")
-public class MidsizeSUV extends Car {
+public class MidSizeSUV extends Car {
 
-    public MidsizeSUV() {
+    public MidSizeSUV() {
     }
 
-    public MidsizeSUV(String model, int year, String brand, int seatingCapacity) {
+    public MidSizeSUV(String model, int year, String brand, int seatingCapacity) {
         super(model, year, brand, seatingCapacity);
     }
 
