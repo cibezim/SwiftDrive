@@ -1,11 +1,24 @@
 package com.cibezim.swiftdrive.model;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "cars")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "car_type", discriminatorType = DiscriminatorType.STRING)
 public abstract class Car {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "model")
     private String model;
+    @Column(name = "year")
     private int year;
+    @Column(name = "brand")
     private String brand;
+    @Column(name = "seating_capacity")
     private int seatingCapacity;
 
     public Car() {
