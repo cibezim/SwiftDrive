@@ -35,6 +35,16 @@ public class User {
     @Column(nullable = false)
     private int age;
 
+    public User() {
+    }
+
+    public User(String username, String password, String email, LocalDate dob, int age) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.dob = dob;
+        this.age = age;
+    }
 
     public Long getUserId() {
         return userId;
