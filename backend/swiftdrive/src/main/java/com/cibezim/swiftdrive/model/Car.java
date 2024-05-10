@@ -20,9 +20,11 @@ public abstract class Car {
     private String brand;
     @Column(name = "seating_capacity")
     private int seatingCapacity;
+    @Column(name = "car_type", insertable = false, updatable = false)
+    private String carType;
+
 
     public Car() {
-
     }
 
     public Car(String model, int year, String brand, int seatingCapacity) {
@@ -30,10 +32,7 @@ public abstract class Car {
         this.year = year;
         this.brand = brand;
         this.seatingCapacity = seatingCapacity;
-    }
-
-    public Long getId() {
-        return id;
+        this.carType = getCarType();
     }
 
     public void setId(Long id) {
