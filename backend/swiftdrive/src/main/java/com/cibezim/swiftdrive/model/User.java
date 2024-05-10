@@ -29,7 +29,7 @@ public class User {
     @Past(message = "Date of Birth must be in the past")
     @Column(name = "date_of_birth", nullable = false)
     @Temporal(TemporalType.DATE)
-    private LocalDate dob;
+    private LocalDate DateOfBirth;
 
     @Min(value = 18, message = "Age must be at least 18")
     @Column(nullable = false)
@@ -38,11 +38,11 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, String email, LocalDate dob, int age) {
+    public User(String username, String password, String email, LocalDate DateOfBirth, int age) {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.dob = dob;
+        this.DateOfBirth = DateOfBirth;
         this.age = age;
     }
 
@@ -78,12 +78,12 @@ public class User {
         this.email = email;
     }
 
-    public LocalDate getDob() {
-        return dob;
+    public LocalDate getDateOfBirth() {
+        return DateOfBirth;
     }
 
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
+    public void setDateOfBirth(LocalDate DateOfBirth) {
+        this.DateOfBirth = DateOfBirth;
     }
 
     public int getAge() {
